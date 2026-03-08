@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet test /workspace/tests/Core.Tests/ 2>&1 | tail -5)",
+      "Bash(dotnet test 2>&1 | tail -8)",
+      "Bash(dotnet build 2>&1 | tail -5)",
+      "Bash(dotnet test /workspace/tests/Adapters.Tests/ 2>&1 | tail -10)",
+      "Bash(dotnet test /workspace/tests/Adapters.Tests/ 2>&1 | tail -8)",
+      "Bash(dotnet test /workspace/tests/Adapters.Tests/ 2>&1 | tail -5)"
+    ]
+  }
+}

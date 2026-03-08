@@ -12,9 +12,8 @@
     "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
   },
   "runArgs": [
-    // "--cap-add=SYS_ADMIN",
-    // "--security-opt", "seccomp=unconfined"
-    "--privileged"
+    "--cap-add=SYS_ADMIN",
+    "--security-opt", "seccomp=unconfined"
   ],
   "customizations": {
     "vscode": {
