@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Adapters/Adapters.csproj" />
+    <Project Path="src/Core/Core.csproj" />
+    <Project Path="src/polymorphic-requests/polymorphic-requests.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Adapters.Tests/Adapters.Tests.csproj" />
+    <Project Path="tests/Core.Tests/Core.Tests.csproj" />
+  </Folder>
+</Solution>
