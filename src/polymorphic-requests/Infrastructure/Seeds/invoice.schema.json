@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Invoice",
+  "description": "Schema for invoice payloads",
+  "type": "object",
+  "properties": {
+    "invoiceNumber": {
+      "type": "string",
+      "title": "Invoice Number",
+      "description": "Unique identifier for the invoice"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount",
+      "description": "Total invoice amount"
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date",
+      "title": "Due Date",
+      "description": "Payment due date in ISO 8601 format"
+    }
+  },
+  "required": ["invoiceNumber", "amount"]
+}

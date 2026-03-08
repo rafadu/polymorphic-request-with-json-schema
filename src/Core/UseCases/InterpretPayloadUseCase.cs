@@ -1,10 +1,12 @@
 using System.Text.Json;
 using Core.Domain;
+using Core.Ports.In;
 using Core.Ports.Out;
 
 namespace Core.UseCases;
 
 public class InterpretPayloadUseCase(ISchemaRepository repository, IPayloadValidator validator)
+    : IInterpretPayloadUseCase
 {
     public async Task<InterpretationResult> InterpretAsync(PayloadType payloadType, JsonElement payload)
     {

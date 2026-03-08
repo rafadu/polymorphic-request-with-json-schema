@@ -1,41 +1,29 @@
+using Adapters.Driven.Persistence;
+using Adapters.Driving.Http;
+using Infrastructure.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var connectionString = builder.Configuration.GetConnectionString("Default")
+    ?? "Data Source=polymorphic.db";
+
+var seedsPath = Path.Combine(builder.Environment.ContentRootPath, "Infrastructure", "Seeds");
+var seeds = Directory.GetFiles(seedsPath, "*.schema.json")
+    .Select(f => new SchemaSeed(
+        Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f)),
+        File.ReadAllText(f)));
+
+builder.Services
+    .AddCoreServices()
+    .AddPersistence(connectionString, seeds);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+var dbContext = app.Services.GetRequiredService<SchemaDbContext>();
+await dbContext.InitializeAsync();
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.MapPayloadEndpoints();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+public partial class Program { }
