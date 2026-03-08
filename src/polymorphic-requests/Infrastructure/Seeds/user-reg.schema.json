@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UserRegistration",
+  "description": "Schema for user registration payloads",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "title": "Username",
+      "description": "Unique username chosen by the user",
+      "minLength": 3,
+      "maxLength": 20,
+      "pattern": "^[a-zA-Z0-9_]+$"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email Address",
+      "description": "User email address used for login and notifications"
+    },
+    "password": {
+      "type": "string",
+      "title": "Password",
+      "description": "Password chosen by the user",
+      "minLength": 8
+    },
+    "age": {
+      "type": "integer",
+      "title": "Age",
+      "description": "Age of the user in years",
+      "minimum": 13
+    },
+    "newsletterSubscribed": {
+      "type": "boolean",
+      "title": "Newsletter Subscription",
+      "description": "Indicates if the user wants to receive marketing emails"
+    }
+  },
+  "required": ["username", "email", "password"]
+}

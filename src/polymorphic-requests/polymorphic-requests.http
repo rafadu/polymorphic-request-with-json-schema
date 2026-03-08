@@ -1,6 +1,27 @@
 @polymorphic_requests_HostAddress = http://localhost:5138
 
-GET {{polymorphic_requests_HostAddress}}/weatherforecast/
+POST {{polymorphic_requests_HostAddress}}/api/payload/invoice
 Accept: application/json
+Content-Type: application/json
+
+{
+	"invoiceNumber":"INV001-2026",
+	"amount": 9500.56,
+	"dueDate":"2026-03-08T10:42:45.999"
+}
+
+###
+
+POST {{polymorphic_requests_HostAddress}}/api/payload/user-reg
+Accept: application/json
+Content-Type: application/json
+
+{
+	"username": "rafadu",
+	"email": "rafael.dgs.1993@gmail.com",
+	"password":"thisIsJustAnExample",
+	"age":30,
+	"newsletterSubscribed":false
+}
 
 ###

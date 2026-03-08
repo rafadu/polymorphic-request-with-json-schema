@@ -23,5 +23,7 @@
       ]
     }
   },
-  "remoteUser": "root"
+  // "remoteUser": "root" //cuidado com isso
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true
 }
