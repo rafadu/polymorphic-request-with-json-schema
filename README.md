@@ -36,11 +36,18 @@ Além disso foi um exercício para construir o código usando somente agente de 
 
 ### Sobre o uso da IA
 
-- **Contexto é Rei.** Tudo foi muito fluído mas por causa do arquivo [CLAUDE.md](CLAUDE.md) onde está todo o contexto do projeto.
-- **Skill é a chave para repetição.** Dado que contexto é crucial, para que a IA entregue o mesmo resultado sempre, ela precisa receber o mesmo contexto sempre. O uso de skills agiliza e padroniza o processo.
-- **Cuidados com segurança.** Deixar o agente com acesso ao seu computador sempre trará riscos, ainda mais com os ataques de Supply-Chain que têm aparecido. Rodar via Developer Container trás uma segurança forte. Eu não permiti o agente rodar git push, mas tambem no momento que precisou eu fiz isso manualmente. É importante definir até onde é seguro a IA mexer.
-- **Atenção com o uso de tokens.** Para esse projeto gastei uma boa cota do limite de tokens. Não cheguei nos 100% mas passei dos 60%. Isso envolveu não somente a execução do agente, mas de algumas dúvidas que tirei com o Claude em outras sessões. 
-- **Agilidade.** Apesar do que considero um alto consumo de tokens, o projeto foi feito em umas 3 horas. Entre criar repositório, criar estrutura e configuração inicial (CLAUDE.md, pasta src, devcontainer), iniciar e rodar container, construir a aplicação, revisando alguns tópicos e tirando dúvidas durante o desenvolvimento, testar a API rodando localmente e fazer o push ao repositório (isso de forma manual). **Se bem preparado, o uso da IA lhe trará um bom retorno.**
+- **Contexto é Rei.** 
+    - Tudo foi muito fluído mas por causa do arquivo [CLAUDE.md](CLAUDE.md) onde está todo o contexto do projeto.
+- **Skill é a chave para repetição.** 
+    - Dado que contexto é crucial, para que a IA entregue o mesmo resultado sempre, ela precisa receber o mesmo contexto sempre. O uso de skills agiliza e padroniza o processo.
+- **Cuidados com segurança.** 
+    - Deixar o agente com acesso ao seu computador sempre trará riscos, ainda mais com os ataques de Supply-Chain que têm aparecido. Rodar via Developer Container trás uma segurança forte. 
+    - Eu não permiti o agente rodar git push, mas tambem no momento que precisou eu fiz isso manualmente. É importante definir até onde é seguro a IA mexer.
+    - Caso necessite de Keys ou dados importantes, sempre coloque em variáveis e não as deixe expostas tanto no repositório quanto no Container
+- **Atenção com o uso de tokens.** 
+    - Para esse projeto gastei uma boa cota do limite de tokens. Não cheguei nos 100% mas passei dos 60%. Isso envolveu não somente a execução do agente, mas de algumas dúvidas que tirei com o Claude em outras sessões. 
+- **Agilidade.** 
+    - Apesar do que considero um alto consumo de tokens, o projeto foi feito em umas 3 horas. Entre criar repositório, criar estrutura e configuração inicial (CLAUDE.md, pasta src, devcontainer), iniciar e rodar container, construir a aplicação, revisando alguns tópicos e tirando dúvidas durante o desenvolvimento, testar a API rodando localmente e fazer o push ao repositório (isso de forma manual). **Se bem preparado, o uso da IA lhe trará um bom retorno.**
 
 
 ## Aprendizados para o futuro
